@@ -21,13 +21,13 @@ Follow these steps to run the backend and frontend Docker containers and ensure 
 ## 1. Pull Backend Image
 Download the backend image from the Docker registry:
 ```bash
-docker pull wishmarukapitak/backend:latest
+docker pull nnatchy14/frontend:latest
 ```
 
 ## 2. Pull Frontend Image
 Download the frontend image from the Docker registry:
 ```bash
-docker pull wishmarukapitak/frontend:latest
+docker pull nnatchy14/backend:latest
 ```
 
 ---
@@ -35,28 +35,23 @@ docker pull wishmarukapitak/frontend:latest
 ## 3. Create a Custom Docker Network
 Create a custom Docker network to enable communication between the backend and frontend containers:
 ```bash
-docker network create my_custom_network
+docker network create my_network
 ```
 
 ---
 
-## 4. Create a Directory for Backend
-Create a directory named `backend` and place your `.env` file inside this directory. The `.env` file contains the environment variables required for the backend to function.
-
----
-
-## 5. Run Backend with `.env`
-Run the backend container and attach it to the custom network:
+## 4. Run Backend
+Run the backend container and attach it to the same custom network:
 ```bash
-docker run --network my_custom_network -p 8010:8010 -v $(pwd)/backend/.env:/app/.env wishmarukapitak/backend:latest
+docker run --network my_network -p 8010:8010 nnatchy14/backend:latest
 ```
 
 ---
 
-## 6. Run Frontend
+## 5. Run Frontend
 Run the frontend container and attach it to the same custom network:
 ```bash
-docker run --network my_custom_network -p 3000:80 wishmarukapitak/frontend:latest
+docker run --network my_network -p 3000:3000 nnatchy14/frontend:latest
 ```
 
 ---
