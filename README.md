@@ -103,5 +103,3 @@ docker run --network my_network -p 3000:3000 nnatchy14/frontend:latest
   - Verify that the `.env` file contains the correct settings for your backend service.
   
 ---
-
-This ensures that users know to reference the additional `README.md` files in each directory for more detailed instructions or debugging help. Let me know if you need further updates!
