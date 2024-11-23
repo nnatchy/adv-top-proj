@@ -56,6 +56,27 @@ docker run --network my_network -p 3000:3000 nnatchy14/frontend:latest
 
 ---
 
+## How to Use This App
+
+1. **Connect Your MetaMask Account**:
+   - Visit the web application at `http://localhost:3000`.
+   - Use your MetaMask wallet to connect your account. This step is necessary to register your identity securely.
+
+2. **Register Your Information**:
+   - Once connected, register your details (e.g., student ID, name).  
+   - **Note**: Your student ID will be validated to ensure eligibility.
+
+3. **Select the Voting Position**:
+   - After registration, you will be able to choose the type of position you wish to vote for (e.g., class representative, club leader, etc.).
+
+4. **Vote for Your Desired Candidate**:
+   - Review the list of candidates for the selected position and cast your vote.
+
+5. **View Results**:
+   - After voting, you can view the results, including your vote and the overall distribution of votes from others.
+
+---
+
 ### Notes:
 1. **Communication Between Backend and Frontend**:
    - Ensure the backend and frontend are configured to communicate within the same network. For example, in the `.env` file or frontend configuration, reference the backend service using the container name (e.g., `http://backend:8010`).
@@ -66,6 +87,9 @@ docker run --network my_network -p 3000:3000 nnatchy14/frontend:latest
 
 3. **For More Information**:
    - If something isn’t working properly, check the respective `README.md` file in the `frontend` or `backend` directory for more details and troubleshooting steps.
+
+4. **.env changes**
+   - you must change `ETHEREUM_PRIVATE_KEY_VOTING=xxxx` with yours
 
 ---
 
