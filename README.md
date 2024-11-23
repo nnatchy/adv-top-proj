@@ -79,25 +79,29 @@ docker run --network my_network -p 3000:3000 nnatchy14/frontend:latest
 
 ### Additional Notes
 
-1. **Backend-Frontend Communication**:
-   - Ensure both services are configured to communicate within the same Docker network. Use the container name (e.g., `http://backend:8010`) in the frontend or backend configurations.
+1. **Service Access**:
+   - Access the backend via:  
+     `http://localhost:8010`  
+   - Access the frontend via:  
+     `http://localhost:3000`  
 
-2. **Service Access**:
-   - Access the backend via `http://localhost:8010`.
-   - Access the frontend via `http://localhost:3000`.
-
-3. **Environment Variables**:
-   - Update the `.env` file, particularly the `ETHEREUM_PRIVATE_KEY_VOTING` variable:
-     ```env
+2. **Environment Variables**:
+   - **Local Setup**: Update the `.env` file in your project directory. Ensure the `ETHEREUM_PRIVATE_KEY_VOTING` variable is set to your wallet's private key:  
+     ```bash
      ETHEREUM_PRIVATE_KEY_VOTING=your_private_key
      ```
-     **Note**: The `ETHEREUM_PRIVATE_KEY_VOTING` must be the private key of the wallet address. This is required because the team cannot find a way to include sensitive environment variables in the Docker images.
+   - **Dockerized Setup**: If running via Docker images, update the `.env` file inside the container. Access the container and edit the file as follows:  
+     ```bash
+     docker exec -it <container_name> bash
+     nano /path/to/.env
+     ```
+   **Note**: The `ETHEREUM_PRIVATE_KEY_VOTING` must be the private key of the wallet address. This is required because the team cannot find a way to include sensitive environment variables in the Docker images.
 
-4. **GitLab References**:
+3. **GitLab References**:
    - Initial Frontend Repository: [Frontend GitLab Repository](https://gitlab.com/adv-top-project/frontend)
    - Initial Backend Repository: [Backend GitLab Repository](https://gitlab.com/adv-top-project/backend)
 
-5. **For More Information**:
+4. **For More Information**:
    - Refer to the `README.md` files in the `frontend` or `backend` directories for detailed instructions or troubleshooting.
 
 ---
@@ -113,4 +117,4 @@ docker run --network my_network -p 3000:3000 nnatchy14/frontend:latest
 - **Environment Variables**:
   - Double-check your `.env` file for correct backend and blockchain configurations.
 
---- 
+---
