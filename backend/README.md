@@ -39,7 +39,6 @@ Place the required .env file in the root directory of the repository. The .env f
 ```env
 APP_PORT=8010
 APP_ENV=dev
-JWT_SECRET_KEY=
 FRONTEND_URL=
 
 # Ethereum Configuration
