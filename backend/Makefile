@@ -1,4 +1,4 @@
-.PHONY: run build down clean info logs restart ps rebuild generate-go-bindings
+.PHONY: run build down clean info logs restart ps rebuild generate-go-bindings vote docker-build docker-run
 
 info:
 	docker compose ps
@@ -24,24 +24,23 @@ restart:
 ps:
 	docker compose ps
 
-rebuild: clean docker_build run
+rebuild: clean docker-build run
 
 # Generate Go bindings from the ABI and bytecode
 generate-go-bindings:
 	abigen --bin=internal/infrastructure/ethereum/solidity/Voting.bin \
-           --abi=internal/infrastructure/ethereum/solidity/Voting.abi \
-           --pkg=solidity \
-           --out=internal/infrastructure/ethereum/solidity/simple_storage.go
+	       --abi=internal/infrastructure/ethereum/solidity/Voting.abi \
+	       --pkg=solidity \
+	       --out=internal/infrastructure/ethereum/solidity/simple_storage.go
 
-# Generate Go bindings from the ABI and bytecode
-vote :
+vote:
 	abigen --bin=internal/infrastructure/ethereum/solidity/voting/Voting.bin \
-           --abi=internal/infrastructure/ethereum/solidity/voting/Voting.abi \
-           --pkg=voting \
-           --out=internal/infrastructure/ethereum/solidity/voting/voting.go
+	       --abi=internal/infrastructure/ethereum/solidity/voting/Voting.abi \
+	       --pkg=voting \
+	       --out=internal/infrastructure/ethereum/solidity/voting/voting.go
 
 docker-build:
-    docker build -t natsith/adv-backend .
+	docker build -t natsith/adv-backend .
 
 docker-run:
-    docker run -p 8010:8010 natsith/adv-backend
+	docker run -p 8010:8010 natsith/adv-backend
