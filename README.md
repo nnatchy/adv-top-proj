@@ -8,9 +8,6 @@ By Group mairoira,
 ```
 
 ---
-Here’s the revised `README.md` with the additional note about checking the `README.md` files in the respective directories for more information if something isn’t working:
-
----
 
 # Docker Image Setup Instructions
 
