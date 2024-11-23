@@ -1,0 +1,52 @@
+# Environment variables
+.env
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+*.out
+
+# Binaries and compiled files
+*.exe
+*.dll
+*.so
+*.dylib
+*.test
+*.bin
+*.abi
+
+# Go cache and vendor
+**/vendor/
+**/cmd/**/vendor/
+**/internal/**/vendor/
+**/pkg/**/vendor/
+
+# Temporary or local files
+tmp/
+*.tmp
+*.swp
+
+# Editor files
+*.vscode/
+.idea/
+*.iml
+
+# Testing and coverage reports
+coverage/
+*.coverprofile
+*.prof
+*_test.go
+*.snap
+
+# Node.js files
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Ignore Go mod cache (if applicable)
+go.sum

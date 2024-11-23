@@ -1,0 +1,32 @@
+# Git
+.git
+.gitignore
+
+# Documentation files
+README.md
+LICENSE
+
+# Temporary and OS-specific files
+.DS_Store
+Thumbs.db
+*.swp
+tmp/
+
+# Node.js
+node_modules/
+
+# Logs and cache
+*.log
+*.out
+logs/
+**/vendor/
+
+# Testing and coverage files
+coverage/
+*.test
+*_test.go
+*.prof
+*.coverprofile
+
+# Air files (if using live reloading for Go)
+
