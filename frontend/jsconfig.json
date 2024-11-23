@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".", // The root of your project
+    "paths": {
+      "@/*": ["src/*"] // Alias @ to src
+    },
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+, "src/app/home/layout.jsx", "src/app/results/candidates/page.jsx"  ],
+  "exclude": ["node_modules"]
+}
